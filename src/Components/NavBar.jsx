@@ -11,53 +11,34 @@ function NavBar() {
   }, []);
 
   return (
-    <nav className="fixed top-6 w-full z-50 flex justify-center">
+    <nav className="fixed top-10 w-full z-50 flex justify-center">
       <div
-        className={`transition-all duration-300 flex items-center h-12 px-8 rounded-full ${
+        className={`transition-all duration-300 flex items-center h-12 px-8 rounded-full backdrop-blur-md ${
           scrolled
             ? "bg-white shadow-md"
-            : "bg-white/90 backdrop-blur-md shadow-sm"
+            : "bg-white/80 shadow-sm border border-[#eaeaea]/50"
         } max-w-4xl w-full`}
       >
-        {/* Center: Nav Links */}
+        {/* Center Nav Links */}
         <div className="flex-grow flex justify-center space-x-10 text-sm">
-          <Link
-            to="/"
-            className="text-[#0a1937] hover:text-[#d76d07] font-light tracking-wide transition-colors"
-          >
-            Home
-          </Link>
-          <Link
-            to="/OurMission"
-            className="text-[#0a1937] hover:text-[#d76d07] font-light tracking-wide transition-colors"
-          >
-            Our Mission
-          </Link>
-          <Link
-            to="/OurApproach"
-            className="text-[#0a1937] hover:text-[#d76d07] font-light tracking-wide transition-colors"
-          >
-            Our Approach
-          </Link>
-          <Link
-            to="/Programs"
-            className="text-[#0a1937] hover:text-[#d76d07] font-light tracking-wide transition-colors"
-          >
-            Programs & Services
-          </Link>
-    
-        <Link
-            to="/Partner"
-            className="text-[#0a1937] hover:text-[#d76d07] font-light tracking-wide transition-colors"
-          >
-            Partner With Us
-          </Link>
-       </div>
-
-      </div>  
-    
+          {[
+            { name: "Home", to: "/" },
+            { name: "About Us", to: "/about" },
+            { name: "Programs & Services", to: "/Programs" },
+            { name: "Partner With Us", to: "/Partner" },
+          ].map((item, i) => (
+            <Link
+              key={i}
+              to={item.to}
+              className="text-[#0A0A0A] hover:text-[#C8A44B] font-light tracking-wide transition-colors duration-200"
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
+      </div>
     </nav>
-      );
+  );
 }
 
 export default NavBar;

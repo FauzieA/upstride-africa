@@ -13,46 +13,47 @@ import logo from "../assets/logo.png";
 import schoolsImage from "../assets/students.jpg";
 import teachersImage from "../assets/teachers.jpg";
 import companiesImage from "../assets/companies.jpg";
-import mapImage from "../assets/map.jpg"; // ✅ Import your map
+import mapImage from "../assets/map.png";
 
 function Home() {
   return (
-    <div className="w-full font-sans">
+    <div className="w-full font-sans bg-white text-[#0A0A0A]">
       {/* Hero Section */}
       <section
-        className="relative h-[80vh] flex items-center"
+        className="relative h-[80vh] flex items-center border-b border-black/10"
         style={{
           backgroundImage: `url(${heroImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/60"></div>
 
-        {/* Logo on top-left */}
-        <div className="absolute top-6 left-8 z-20">
+        {/* Logo */}
+        <div className="absolute top-0 left-8 z-20">
           <img
             src={logo}
             alt="Upstride Africa"
-            className="h-20 md:h-30 w-auto object-contain"
+            className="h-36 w-auto object-contain"
           />
         </div>
 
-        {/* Content */}
+        {/* Hero Text */}
         <div className="relative z-10 px-6 md:px-12 lg:px-20">
           <div className="max-w-xl text-left">
             <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white leading-snug">
-              Reshaping Africa’s Future <br /> Through Skills, Innovation &
-              Impact
+              Reshaping Africa’s Future <br />{" "}
+              <span className="text-[#C8A44B]">
+                Through Skills, Innovation & Impact
+              </span>
             </h1>
             <p className="text-base md:text-lg font-light mb-6 text-gray-200">
-              Exclusive training for schools, companies, and associations —
-              designed for transformation, not theory.
+              Exclusive training for schools, companies, and associations — designed for
+              transformation, not theory.
             </p>
             <Link
               to="/programs"
-              className="px-5 py-2.5 rounded-md bg-[#D76D07] hover:bg-[#d76d07cc] text-white font-medium text-sm md:text-base"
+              className="px-6 py-3 rounded-full bg-[#C8A44B] hover:bg-[#b59642] text-white font-semibold shadow-md transition-all"
             >
               Explore Our Programs
             </Link>
@@ -60,7 +61,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Stats Section - Overlapping */}
+      {/* Stats Section */}
       <section className="relative z-10 -mt-16">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-6">
           {[
@@ -71,13 +72,11 @@ function Home() {
           ].map(({ Icon, value, label }, i) => (
             <div
               key={i}
-              className="bg-white shadow-lg rounded-xl p-4 text-center"
+              className="bg-white border border-black/10 hover:border-black/20 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-all"
             >
-              <Icon className="w-8 h-8 mx-auto text-[#D76D07] mb-3" />
-              <h3 className="text-2xl md:text-3xl font-bold text-[#0A1937]">
-                {value}
-              </h3>
-              <p className="text-gray-600 mt-1 font-light text-sm md:text-base">
+              <Icon className="w-8 h-8 mx-auto text-[#C8A44B] mb-3" />
+              <h3 className="text-3xl font-bold text-black">{value}</h3>
+              <p className="text-gray-700 mt-1 font-light text-sm md:text-base">
                 {label}
               </p>
             </div>
@@ -85,80 +84,112 @@ function Home() {
         </div>
       </section>
 
-      {/* Why Upstride - Refreshed Section */}
-      <section className="relative py-20 bg-white overflow-hidden">
-        {/* Background world map overlay */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
-          <img
-            src={mapImage} // ✅ Using your local map
-            alt="World Map"
-            className="w-[90%] max-w-6xl object-contain mix-blend-multiply"
-          />
-        </div>
+     {/* Why Upstride */}
+<section className="relative py-24 bg-white overflow-hidden">
+  {/* faint decorative background */}
+  <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
+    <img
+      src={mapImage}
+      alt="World Map"
+      className="w-[90%] max-w-6xl object-contain mix-blend-multiply"
+    />
+  </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-16 text-[#0A1937]">
-            Why Upstride Africa?
-          </h2>
+  <div className="relative max-w-6xl mx-auto px-6">
+    {/* Heading */}
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+        Why Choose <span className="text-[#C8A44B]">Upstride Africa?</span>
+      </h2>
+      <p className="max-w-3xl mx-auto text-gray-700 text-lg leading-relaxed font-light">
+        We are committed to providing innovative solutions that help create a better tomorrow for everyone. 
+        Upstride Africa isn’t just about skill-building — it’s about a mindset shift. We don’t just equip young 
+        Africans with tools for the future; we help them see themselves differently — as{" "}
+        <span className="font-medium text-black">leaders</span>,{" "}
+        <span className="font-medium text-black">innovators</span>, and{" "}
+        <span className="font-medium text-black">change-makers</span>.
+      </p>
+    </div>
 
-          {/* Benefits in a clean row */}
-          <div className="grid md:grid-cols-3 gap-12">
-            {[
-              {
-                Icon: Target,
-                title: "Future-Ready Skills",
-                desc: "Equipping learners with essential digital, creative, and problem-solving skills.",
-              },
-              {
-                Icon: Handshake,
-                title: "Hands-On Learning",
-                desc: "Real projects and workshops — learning by doing, not just theory.",
-              },
-              {
-                Icon: Building2,
-                title: "Tailored for Institutions",
-                desc: "Programs designed to transform schools, companies, and associations.",
-              },
-            ].map(({ Icon, title, desc }, i) => (
-              <div key={i} className="flex flex-col items-center text-center">
-                <Icon className="w-12 h-12 text-[#D76D07] mb-4" />
-                <h3 className="font-semibold text-xl mb-3 text-[#0A1937]">
-                  {title}
-                </h3>
-                <p className="text-gray-700 font-light">{desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+    {/* Feature Columns */}
+    <div className="grid md:grid-cols-3 gap-12">
+      {/* 1 */}
+      <div className="group relative pl-6 border-l-4 border-black/10 hover:border-[#C8A44B] transition-all duration-300">
+        <h3 className="text-xl font-semibold mb-3 text-black flex items-center gap-2">
+          <span className="w-2 h-2 bg-[#C8A44B] rounded-full"></span>
+          Mindset Shift
+        </h3>
+        <p className="text-gray-700 leading-relaxed font-light">
+          We inspire young Africans to rethink who they are — building confidence, leadership, 
+          and a problem-solving attitude that drives meaningful impact.
+        </p>
+      </div>
+
+      {/* 2 */}
+      <div className="group relative pl-6 border-l-4 border-black/10 hover:border-[#C8A44B] transition-all duration-300">
+        <h3 className="text-xl font-semibold mb-3 text-black flex items-center gap-2">
+          <span className="w-2 h-2 bg-[#C8A44B] rounded-full"></span>
+          Deep Innovation
+        </h3>
+        <p className="text-gray-700 leading-relaxed font-light">
+          We are committed to creating solutions that empower communities, foster creativity, 
+          and prepare learners for a rapidly evolving world.
+        </p>
+      </div>
+
+      {/* 3 */}
+      <div className="group relative pl-6 border-l-4 border-black/10 hover:border-[#C8A44B] transition-all duration-300">
+        <h3 className="text-xl font-semibold mb-3 text-black flex items-center gap-2">
+          <span className="w-2 h-2 bg-[#C8A44B] rounded-full"></span>
+          Rapid Value Creation
+        </h3>
+        <p className="text-gray-700 leading-relaxed font-light">
+          We teach learners to build solutions responsibly and sustainably — with ethics, 
+          purpose, and a deep understanding of real-world needs.
+        </p>
+      </div>
+    </div>
+
+    {/* Tagline */}
+    <div className="mt-20 text-center">
+      <p className="text-lg font-medium text-black italic">
+        “Where Mindsets Shift & African Impact Begin.”
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+
 
       {/* Alternating Sections */}
       {[
         {
-          title: "Empowering Schools",
+          title: "Empowering Students",
           tagline: "Preparing tomorrow’s leaders",
-          desc: "We equip schools with modern learning solutions — from coding and AI programs to entrepreneurial thinking, preparing students for the future of work.",
+          desc: "We equip students with modern, future-focused learning experiences — from coding and innovation to entrepreneurial thinking — helping schools prepare the next generation for a world of opportunity.",
           img: schoolsImage,
           reverse: false,
         },
         {
-          title: "Empowering Teachers",
-          tagline: "Transforming classrooms",
-          desc: "We transform teaching methods with practical training in 21st-century pedagogy, creativity, and digital innovation.",
+          title: "Empowering Educators",
+          tagline: "Inspiring impactful teaching",
+          desc: "We equip educators with creative, practical teaching tools and digital skills that spark curiosity and innovation in their classrooms — helping them shape the changemakers of tomorrow.",
           img: teachersImage,
           reverse: true,
         },
         {
           title: "Empowering Companies",
-          tagline: "Driving innovation & growth",
-          desc: "We support organizations with leadership training, innovation workshops, and future-ready skills to drive growth and competitiveness.",
+          tagline: "Empowering impact through collaboration",
+          desc: "We collaborate with companies that want to make a difference — sponsoring hands-on innovation and skills workshops for children and youth, creating real opportunities for growth and transformation.",
           img: companiesImage,
           reverse: false,
         },
       ].map(({ title, tagline, desc, img, reverse }, i) => (
         <section
           key={i}
-          className={`${i % 2 === 0 ? "bg-[#FFF7F0]" : "bg-[#F5F7FA]"} py-20`}
+          className={`${i % 2 === 0 ? "bg-[#FAFAFA]" : "bg-white"} py-20 border-t border-black/5`}
         >
           <div
             className={`max-w-7xl mx-auto px-6 flex flex-col md:flex-row ${
@@ -166,23 +197,27 @@ function Home() {
             } items-center gap-12`}
           >
             {/* Text */}
-            <div className="flex-1">
-              <p className="text-[#D76D07] uppercase tracking-wide font-medium mb-2">
+            <div className="flex-1 relative">
+              {/* Black side accent bar */}
+              <div className="absolute -left-6 top-0 h-full w-[3px] bg-black/80 hidden md:block"></div>
+              <p className="text-[#C8A44B] uppercase tracking-widest font-medium mb-2">
                 {tagline}
               </p>
-              <h2 className="text-3xl font-bold mb-6 text-[#0A1937] border-l-4 border-[#D76D07] pl-4">
+              <h2 className="text-3xl font-bold mb-6 text-black border-l-4 border-[#C8A44B] pl-4">
                 {title}
               </h2>
               <p className="text-lg text-gray-700 font-light mb-6">{desc}</p>
               <Link
                 to="/programs"
-                className="text-[#D76D07] font-medium hover:underline"
+                className="text-black font-medium hover:text-[#C8A44B] transition-all"
               >
                 Learn More →
               </Link>
             </div>
+
             {/* Image */}
-            <div className="flex-1">
+            <div className="flex-1 relative">
+              <div className="absolute -top-4 -right-4 w-full h-full border-2 border-black/80 rounded-lg -z-10"></div>
               <img
                 src={img}
                 alt={title}
@@ -193,18 +228,7 @@ function Home() {
         </section>
       ))}
 
-      {/* Call to Action */}
-      <section className="bg-[#0A1937] py-16 text-center text-white">
-        <h2 className="text-3xl font-bold mb-6">
-          Let’s Build Africa’s Future Together
-        </h2>
-        <Link
-          to="/partner"
-          className="px-6 py-3 bg-[#D76D07] hover:bg-[#d76d07cc] rounded-md font-medium"
-        >
-          Partner With Us
-        </Link>
-      </section>
+      
     </div>
   );
 }
