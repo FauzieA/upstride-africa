@@ -5,6 +5,7 @@ import About from "./Pages/AboutUs";
 import Footer from "./Components/Footer";
 import Programs from "./Pages/Programs";
 import ProgramDetails from "./Pages/ProgramDetails";
+import Partner from "./Pages/Partner";
 
 
 function App() {
@@ -20,10 +21,7 @@ function App() {
         {/* Programs & Services */}
         <Route path="/programs" element={<Programs />} />
         <Route path="/programs/:id" element={<ProgramDetails />} />
-
-     
-
-        {/* You can add more pages later like /programs or /services */}
+        <Route path="/partner" element={<Partner />} />
       </Routes>
       <Footer />
     </>
