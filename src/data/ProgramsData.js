@@ -1,6 +1,13 @@
 // src/data/programsData.js
 // Data store for all Programs (workshops, bootcamps, training).
-// Add or edit entries here to update the site dynamically.
+import codeCreate from "../assets/code-create.png";
+import aiexplorer from "../assets/aiexplorer.png";
+import entrepreneurship from "../assets/entrepreneurship.png";
+import futureready from "../assets/futureready.png";
+import socialbusiness from "../assets/socialbusiness.png";
+import teachertraining from "../assets/teachertraining.png";
+import techforgood from "../assets/techforgood.png";
+
 
 export const programsData = [
   {
@@ -18,7 +25,7 @@ export const programsData = [
       "Go No-Code — Use platforms to design a no-code site",
       "Deploy & Present — Launch and share your website",
     ],
-    image: "/assets/code-create.jpg",
+    image: codeCreate,
   },
   {
     id: "ai-explorers-bootcamp",
@@ -35,7 +42,7 @@ export const programsData = [
       "Hands-on with Teachable Machine / Dialogflow-style tools",
       "Build, test and present a chatbot project",
     ],
-    image: "/assets/ai-explorers.jpg",
+    image: aiexplorer,
   },
   {
     id: "tech-for-good-bootcamp",
@@ -52,7 +59,7 @@ export const programsData = [
       "Brainstorm and sketch solutions",
       "Prototype & Pitch — Build and present a simple prototype",
     ],
-    image: "/assets/tech-for-good.jpg",
+    image: techforgood,
   },
   {
     id: "future-ready-tech-careers",
@@ -70,7 +77,7 @@ export const programsData = [
       "Digital branding & online presence",
       "Present and get feedback on your portfolio",
     ],
-    image: "/assets/future-ready.jpg",
+    image: futureready,
   },
   {
     id: "entrepreneurship-workshop",
@@ -86,7 +93,7 @@ export const programsData = [
       "Day 2: Finding Purpose & Passion — 'Ideas That Matter'",
       "From Idea to Action — Building blocks of business",
     ],
-    image: "/assets/entrepreneurship.jpg",
+    image: entrepreneurship,
   },
   {
     id: "teacher-training-workshop",
@@ -102,7 +109,7 @@ export const programsData = [
       "Day 2: Creating Inclusive & Holistic Classrooms",
       "Ethics, Values & Growth Mindset in Teaching",
     ],
-    image: "/assets/teacher-training.jpg",
+    image: teachertraining,
   },
   {
     id: "social-business-workshop",
@@ -119,6 +126,6 @@ export const programsData = [
       "Day 2: Sustainability & Impact Measurement",
       "From Idea to Action — Building The Africa We Want",
     ],
-    image: "/assets/social-business.jpg",
+    image: socialbusiness,
   },
 ];
